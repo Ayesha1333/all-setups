@@ -3,9 +3,8 @@ sudo yum install wget -y
 sudo yum install java-17-amazon-corretto-jmods -y
 sudo mkdir /app && cd /app
 sudo wget https://download.sonatype.com/nexus/3/nexus-3.90.2-06-linux-x86_64.tar.gz
-sudo tar -xvf nexus-3.90.2-06 nexus
-sudo mv nexus-3.90.2-06 nexus
-sudo adduser nexus
+sudo tar -zxvf nexus-3.90.2-06-linux-x86_64.tar.gz
+sudo useradd nexus
 sudo chown -R nexus:nexus /app/nexus
 sudo chown -R nexus:nexus /app/sonatype-work
 sudo echo "run_as_user="nexus"" > /app/nexus/bin/nexus.rc
